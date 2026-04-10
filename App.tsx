@@ -201,16 +201,16 @@ export default function App() {
 
         {/* REGISTRY */}
         <section id="registry" className="space-y-16 scroll-mt-32">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-12">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-4">
-              <span className="text-[#00BFA6] mono text-[10px] font-black tracking-[0.6em] uppercase flex items-center gap-3">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 md:gap-12">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-4 text-center md:text-left w-full md:w-auto">
+              <span className="text-[#00BFA6] mono text-[10px] font-black tracking-[0.6em] uppercase flex items-center justify-center md:justify-start gap-3">
                 <div className="w-10 h-[1px] bg-[#00BFA6]" /> Engineering_Logs
               </span>
               <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter">Protocols</h2>
             </motion.div>
-            <div className="flex gap-2 bg-white/5 p-1.5 rounded-2xl glass">
+            <div className="flex flex-wrap justify-center gap-2 bg-white/5 p-1.5 rounded-2xl glass w-full md:w-auto">
               {CATEGORIES.map(cat => (
-                <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-6 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all ${activeFilter === cat ? 'bg-white text-black shadow-xl shadow-white/5' : 'text-gray-500 hover:text-white'}`}>{cat}</button>
+                <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-4 md:px-6 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all ${activeFilter === cat ? 'bg-white text-black shadow-xl shadow-white/5' : 'text-gray-500 hover:text-white'}`}>{cat}</button>
               ))}
             </div>
           </div>
@@ -297,7 +297,7 @@ export default function App() {
             </p>
             <div className="flex items-center gap-3 text-gray-800">
               <MapPin size={12} className="text-[#00BFA6]" />
-              <span>24.86° N, 67.00° E</span>
+              <span>32.2655° N, 112.7397° W</span>
             </div>
           </div>
           
