@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { motion, useScroll, useSpring, useTransform, AnimatePresence, useMotionValue } from 'framer-motion';
 import { 
@@ -8,44 +7,41 @@ import {
 } from 'lucide-react';
 
 /**
- * NABORAJ SARKAR | NS CODEX AUTHORITY NODE v12.6
- * MISSION: FREE EDUCATION & AUTOMATION EXCELLENCE
+ * SAADAN ASHRAF | SYSTEMS & SECURITY NODE v1.0
+ * MISSION: SECURE ARCHITECTURE & KERNEL OPTIMIZATION
  */
 const CONFIG = {
   identity: {
-    name: "Naboraj Sarkar",
-    tagline: "Systems Architect & Tech Innovator",
-    location: "West Bengal, India",
-    logo: "/logo.png",
-    repo: "https://github.com/naborajs/personal-3d-portfolio-template",
-    whatsapp: "https://wa.me/918900653250",
-    email: "nishant.ns.business@gmail.com"
+    name: "Saadan Ashraf",
+    tagline: "Systems Engineer & Cybersecurity Researcher",
+    location: "Karachi, Pakistan",
+    logo: "/logo.png", // Keep your logo file in the public folder
+    repo: "https://github.com/saadan-ashraf",
+    whatsapp: "https://wa.me/923316732222",
+    email: "saadanashraf86@gmail.com"
   },
   socials: [
-    { name: 'Github', icon: <Github size={20} />, url: "https://github.com/naborajs" },
-    { name: 'LinkedIn', icon: <Linkedin size={20} />, url: "https://linkedin.com/in/naboraj-sarkar" },
-    { name: 'Instagram', icon: <Instagram size={20} />, url: "https://instagram.com/naborajs" },
-    { name: 'X', icon: <Twitter size={20} />, url: "https://x.com/NSGAMMING699" },
-    { name: 'YouTube', icon: <Youtube size={20} />, url: "https://youtube.com/@Nishant_sarkar" }
+    { name: 'Github', icon: <Github size={20} />, url: "https://github.com/Saadan-not-a-coder" },
+    { name: 'LinkedIn', icon: <Linkedin size={20} />, url: "https://linkedin.com/in/saadan-ashraf/" }
   ]
 };
 
-const CATEGORIES = ["All", "Automation", "Systems", "Interface"];
+const CATEGORIES = ["All", "Cybersecurity", "Systems", "Full-Stack"];
 
 const PROTOCOL_REGISTRY = [
-  { id: "SYS-01", category: "Systems", title: "Enterprise Logic", description: "Architecting zero-latency backends for global distribution. Specializing in highly distributed database clusters and secure authentication protocols that govern massive user traffic.", icon: <Database className="text-cyan-400" size={24} />, purpose: "Reliable foundation for modern enterprise-grade solutions.", tags: ["Node.js", "K8s", "Redis"] },
-  { id: "AUT-02", category: "Automation", title: "Intelligent Bots", description: "Engineering neuro-mimetic automation for Telegram and WhatsApp. These aren't simple scripts; they are intelligent agents capable of managing inventory, CRM sync, and dynamic customer support.", icon: <Cpu className="text-[#00BFA6]" size={24} />, purpose: "Scaling business operations through algorithmic efficiency.", tags: ["Python", "OpenAI", "Webhooks"] },
-  { id: "INT-03", category: "Interface", title: "Spatial Experiences", description: "Moving beyond flat design. Utilizing 3D math and advanced physics engines to create immersive web portals that respond to user presence and intent.", icon: <Eye className="text-violet-500" size={24} />, purpose: "Elevating digital brand identity to cinematic heights.", tags: ["Three.js", "React", "Shaders"] },
-  { id: "AUT-04", category: "Automation", title: "Global Pipeline", description: "Connecting the disconnected. Building unified data highways between marketing tools, payment gateways, and logistics trackers to eliminate human error.", icon: <Zap className="text-amber-400" size={24} />, purpose: "Total digital transformation for creator-led agencies.", tags: ["Node-RED", "Stripe", "CRMs"] },
-  { id: "SYS-05", category: "Systems", title: "Security Forge", description: "Hardening digital assets against modern threats. Implementing end-to-end encryption and robust firewall configurations at the network edge.", icon: <Globe className="text-[#00BFA6]" size={24} />, purpose: "Protecting user data in an increasingly volatile web.", tags: ["CyberSec", "Infra", "TLS"] },
-  { id: "INT-06", category: "Interface", title: "Mobile Synapse", description: "Developing mobile apps that feel like native extensions of the user. Focus on 60fps animations, intuitive gesture control, and offline-first persistence.", icon: <Smartphone className="text-pink-500" size={24} />, purpose: "Portable utility for the high-speed modern user.", tags: ["Swift", "Flutter", "Kotlin"] }
+  { id: "SEC-01", category: "Cybersecurity", title: "Meltdown POC", description: "Executed a proof-of-concept for the Meltdown CPU vulnerability. Developed comprehensive technical reports and visual simulation analysis.", icon: <ShieldCheck className="text-cyan-400" size={24} />, purpose: "Vulnerability Assessment", tags: ["C++", "Kernel", "Hardware"] },
+  { id: "SYS-02", category: "Systems", title: "MLFQ Scheduler", description: "Engineered a Multi-Level Feedback Queue scheduler directly within the xv6 operating system. Implemented dynamic promotion/demotion policies.", icon: <Cpu className="text-[#00BFA6]" size={24} />, purpose: "Low-level CPU Optimization", tags: ["C", "xv6", "OS Architecture"] },
+  { id: "SEC-03", category: "Cybersecurity", title: "Adversarial Phishing", description: "Developed an adversarial learning model to analyze and detect sophisticated phishing attempts across web environments.", icon: <Globe className="text-violet-500" size={24} />, purpose: "Threat Detection & Mitigation", tags: ["Python", "ML", "Security"] },
+  { id: "DEV-04", category: "Full-Stack", title: "Edu-Quiz Portal", description: "Architected a comprehensive full-stack quiz platform. Designed robust SQL database schemas and wrote comprehensive test cases to ensure accurate grading.", icon: <Layers className="text-amber-400" size={24} />, purpose: "Scalable Academic Tooling", tags: ["ReactJS", "Express", "SQL"] },
+  { id: "SEC-05", category: "Cybersecurity", title: "Network Defense", description: "Simulated advanced network layer attacks, including SYN Flood DoS utilizing Scapy within isolated Docker environments, alongside DNS spoofing mitigation.", icon: <Zap className="text-[#00BFA6]" size={24} />, purpose: "Network Infrastructure Hardening", tags: ["Scapy", "Docker", "DNS"] },
+  { id: "SYS-06", category: "Systems", title: "Cryptographic Vectors", description: "Engineered Python automation scripts focusing on byte-at-a-time ECB decryption attacks for advanced cryptanalysis and vulnerability demonstration.", icon: <Terminal className="text-pink-500" size={24} />, purpose: "Cryptographic Analysis", tags: ["Python", "Cryptography", "ECB"] }
 ];
 
 const TEMPORAL_LOGS = [
-  { year: "2021", title: "The Awakening", text: "Decoded the architecture of digital systems. My first terminal session was more than code—it was the birth of a philosophy centered on precision and speed.", icon: <Terminal /> },
-  { year: "2022", title: "ICSE & Foundations", text: "Successfully completed ICSE board education with a deep focus on computer science. Mastered the core logic of programming while building my first automation scripts.", icon: <GraduationCap /> },
-  { year: "2023", title: "NS CODEX Genesis", text: "Forged the 'Dark Modern' aesthetic and officially launched NS CODEX. Shifted focus toward building proper intelligent bots and AI agents for the global market.", icon: <Command /> },
-  { year: "2024", title: "Crypto & Education", text: "Expanded into the crypto investment landscape while launching a mission to provide free, high-quality coding education to everyone across India.", icon: <Bitcoin /> }
+  { year: "2021", title: "Foundations", text: "Began professional journey as a Teacher's Assistant at SWK Solutions, establishing strong fundamentals in technical instruction and communication.", icon: <Terminal /> },
+  { year: "2024", title: "Corporate & Leadership", text: "Operated as a Sales Representative at DESOL while successfully managing large-scale academic events on the Registrations Executive Council for TEDxIBA.", icon: <Activity /> },
+  { year: "2025", title: "Strategic Vision", text: "Stepped up as Chief Advisor for TEDxIBA (2025-2026). Mentored the executive council in planning the annual event and driving cross-functional collaborations.", icon: <Command /> },
+  { year: "2026", title: "Systems & Security", text: "Currently serving as a TA for Computer Communications & Networks at IBA Karachi. Deep-diving into xv6 kernel modification and adversarial cybersecurity research.", icon: <ShieldCheck /> }
 ];
 
 const ProtocolCard = ({ item }: { item: typeof PROTOCOL_REGISTRY[0] }) => {
@@ -109,7 +105,7 @@ export default function App() {
           <a href="#" className="flex items-center gap-4 group">
             <img src={CONFIG.identity.logo} className="w-8 h-8 object-contain hover:rotate-12 transition-transform" alt="Logo" />
             <span className="font-black uppercase tracking-tighter text-xs">
-              NABORAJ <span className="text-[#00BFA6]">SARKAR</span>
+              SAADAN <span className="text-[#00BFA6]">ASHRAF</span>
             </span>
           </a>
           <nav className="flex items-center gap-8">
@@ -119,11 +115,11 @@ export default function App() {
               <a href="#history" className="hover:text-white transition-colors">History</a>
             </div>
             <div className="flex items-center gap-2">
-              <a href={CONFIG.identity.repo} target="_blank" className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
-                <Code2 size={16} />
+              <a href={CONFIG.socials[0].url} target="_blank" className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
+                <Github size={16} />
               </a>
               <a href={CONFIG.identity.whatsapp} target="_blank" className="hidden md:flex items-center gap-2 px-4 py-2 bg-[#00BFA6] text-black rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-white transition-colors">
-                <MessageCircle size={12} /> WhatsApp
+                <MessageCircle size={12} /> Direct COM
               </a>
             </div>
           </nav>
@@ -136,16 +132,16 @@ export default function App() {
           <motion.div style={{ opacity, scale }} className="space-y-12">
             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full glass border-[#00BFA6]/30 mx-auto md:mx-0">
               <ShieldCheck size={14} className="text-[#00BFA6]" />
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase mono text-[#00BFA6]">V12.6_NS_CODEX_AUTH</span>
+              <span className="text-[10px] font-black tracking-[0.3em] uppercase mono text-[#00BFA6]">SAADAN_ASHRAF_SYS_AUTH</span>
             </div>
             <h1 className="text-7xl md:text-[13rem] font-black tracking-tighter leading-[0.75]">
-              NABORAJ<br/><span className="text-gradient">SARKAR</span>
+              SAADAN<br/><span className="text-gradient">ASHRAF</span>
             </h1>
             <p className="text-2xl md:text-5xl text-gray-500 font-light max-w-5xl leading-tight">
-              A <span className="text-white font-medium italic underline underline-offset-8 decoration-[#00BFA6]">Systems Architect</span> empowering India with free education and advanced AI logic.
+              A <span className="text-white font-medium italic underline underline-offset-8 decoration-[#00BFA6]">Systems Engineer</span> architecting full-stack solutions and modifying OS kernels.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-6 pt-8">
-              <a href={CONFIG.identity.whatsapp} target="_blank" className="px-10 py-5 bg-white text-black rounded-full font-black uppercase text-xs tracking-[0.2em] hover:bg-[#00BFA6] hover:text-white transition-all text-center">Establish Connection</a>
+              <a href="#registry" className="px-10 py-5 bg-white text-black rounded-full font-black uppercase text-xs tracking-[0.2em] hover:bg-[#00BFA6] hover:text-white transition-all text-center">View Operations</a>
               <div className="flex gap-2">
                 {CONFIG.socials.map(s => (
                   <a key={s.name} href={s.url} target="_blank" className="w-14 h-14 glass rounded-xl flex items-center justify-center hover:bg-[#00BFA6]/20 transition-all text-white/70 hover:text-[#00BFA6]">{s.icon}</a>
@@ -158,33 +154,33 @@ export default function App() {
         {/* ABOUT / STORY */}
         <section id="about" className="grid md:grid-cols-2 gap-24 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
-            <span className="text-[#00BFA6] mono text-[10px] font-black tracking-[0.6em] uppercase">// The_NS_CODEX_Mission</span>
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Who is<br/>Naboraj Sarkar?</h2>
+            <span className="text-[#00BFA6] mono text-[10px] font-black tracking-[0.6em] uppercase">// The_Architecture</span>
+            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Who is<br/>Saadan Ashraf?</h2>
             <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed">
               <p>
-                Operating as a multi-disciplinary architect within <span className="text-white font-bold">NS CODEX</span>, my core mission is to bridge the digital divide. I believe that <span className="text-gradient font-bold uppercase">Coding is the Future</span>, and my primary target is providing <span className="text-white font-bold italic">Free Education</span> to everyone to ensure they can navigate the automated landscape of tomorrow properly.
+                As a Computer Science student at <span className="text-white font-bold">IBA Karachi</span>, my focus lies entirely at the intersection of low-level systems programming and high-level application architecture. I build platforms that scale and secure the networks they run on.
               </p>
               <p>
-                Educated under the <span className="text-white font-bold">ICSE board</span>, I have synthesized traditional academic rigour with modern technical mastery. From engineering intelligent bots and AI agents to navigating the volatility of <span className="text-white font-bold">Crypto Investment</span>, my approach is defined by precision and global perspective.
+                My toolkit spans from developing responsive interfaces in <span className="text-white font-bold">ReactJS</span> and <span className="text-white font-bold">Express</span>, down to modifying the <span className="text-white font-bold italic">xv6 Operating System Kernel</span> using C++. I approach cybersecurity not just theoretically, but by engineering adversarial models and executing exploit proofs-of-concept.
               </p>
               <p>
-                Based in <span className="text-[#00BFA6] font-bold">India</span>, I am dedicated to building systems that aren't just powerful, but also educational. Through NS CODEX, I deploy tools that solve business problems while teaching the next generation of engineers the "proper way" to build.
+                Beyond the code, I actively foster cross-functional collaboration. Whether I am assisting instructors in <span className="text-[#00BFA6] font-bold">Computer Communications & Networks</span> or leading the executive council as the Chief Advisor for <span className="text-white font-bold">TEDxIBA</span>, my objective remains consistent: precision, leadership, and operational excellence.
               </p>
             </div>
             <div className="flex flex-wrap gap-6 pt-6">
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">ICSE BOARD</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">Education</span>
+                <span className="text-xs font-black text-[#00BFA6]">FULL-STACK</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">React_Node_SQL</span>
               </div>
               <div className="w-[1px] h-10 bg-white/10 hidden sm:block" />
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">FREE_ED</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">Target_Goal</span>
+                <span className="text-xs font-black text-[#00BFA6]">SYSTEMS</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">C++_Linux_xv6</span>
               </div>
               <div className="w-[1px] h-10 bg-white/10 hidden sm:block" />
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">CRYPTO</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">Asset_Class</span>
+                <span className="text-xs font-black text-[#00BFA6]">SECURITY</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">ISO27001_Kali</span>
               </div>
             </div>
           </motion.div>
@@ -196,7 +192,7 @@ export default function App() {
             <div className="absolute -bottom-10 -right-10 glass px-10 py-6 rounded-3xl">
               <div className="flex items-center gap-4">
                 <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-                <span className="mono text-[10px] font-bold uppercase tracking-widest">Node: NS_CODEX_Educator</span>
+                <span className="mono text-[10px] font-bold uppercase tracking-widest">Node: IBA_KARACHI</span>
               </div>
             </div>
           </motion.div>
@@ -207,7 +203,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-end gap-12">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-4">
               <span className="text-[#00BFA6] mono text-[10px] font-black tracking-[0.6em] uppercase flex items-center gap-3">
-                <div className="w-10 h-[1px] bg-[#00BFA6]" /> Capability_Registry
+                <div className="w-10 h-[1px] bg-[#00BFA6]" /> Engineering_Logs
               </span>
               <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter">Protocols</h2>
             </motion.div>
@@ -270,38 +266,37 @@ export default function App() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#00BFA6]/5 via-transparent to-[#7C3AED]/5 pointer-events-none" />
             <div className="space-y-6">
               <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter">Direct<br/><span className="text-[#00BFA6]">Inquiry</span></h2>
-              <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">Available for educational consulting, AI agent deployment, and investment synergy.</p>
+              <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">Available for security assessments, full-stack architecture roles, and technical collaborations.</p>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center gap-6 pt-8">
               <a href={`mailto:${CONFIG.identity.email}`} className="flex items-center gap-3 px-12 py-6 bg-white text-black rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#00BFA6] hover:text-white transition-all w-full md:w-auto text-center justify-center">
                 <Mail size={16} /> Email Sync
               </a>
               <a href={CONFIG.identity.whatsapp} target="_blank" className="flex items-center gap-3 px-12 py-6 glass border-[#00BFA6]/30 text-[#00BFA6] rounded-full font-black uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all w-full md:w-auto text-center justify-center">
-                <MessageCircle size={16} /> WhatsApp Business
+                <MessageCircle size={16} /> Secure Channel
               </a>
             </div>
             <div className="pt-8 mono text-[10px] text-gray-600 tracking-widest">
-              BUSINESS ADDR: +91 89006 53250 | {CONFIG.identity.email}
+              CONTACT NODE: +92 331 6732222 | {CONFIG.identity.email}
             </div>
           </motion.div>
         </section>
 
         {/* FOOTER */}
-        <footer className="pt-32 pb-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-start gap-16 text-[10px] font-black uppercase tracking-[0.4em] text-gray-700 mono">
-          <div className="space-y-8 max-w-xs">
+          <footer className="pt-32 pb-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-start gap-16 text-[10px] font-black uppercase tracking-[0.4em] text-gray-700 mono">          <div className="space-y-8 max-w-xs">
             <div className="flex items-center gap-6">
               <img src={CONFIG.identity.logo} className="w-12 h-12 object-contain grayscale opacity-30 hover:opacity-100 transition-opacity" alt="Logo" />
               <div>
-                <p className="text-white text-xs tracking-widest">NABORAJ SARKAR</p>
-                <p className="text-[#00BFA6]/40 mt-1">NS CODEX Node v12.6</p>
+                <p className="text-white text-xs tracking-widest">SAADAN ASHRAF</p>
+                <p className="text-[#00BFA6]/40 mt-1">Systems Node v1.0</p>
               </div>
             </div>
             <p className="normal-case tracking-normal text-xs text-gray-500 font-light leading-relaxed">
-              Global systems architect and ICSE-trained engineer from India. Specialized in AI automation, crypto investment, and providing free digital education worldwide.
+              Computer Science student at IBA. Specialized in full-stack engineering, kernel modification, and vulnerability assessment. 
             </p>
             <div className="flex items-center gap-3 text-gray-800">
               <MapPin size={12} className="text-[#00BFA6]" />
-              <span>22.98° N, 87.85° E</span>
+              <span>24.86° N, 67.00° E</span>
             </div>
           </div>
           
@@ -327,17 +322,17 @@ export default function App() {
                <h5 className="text-white text-[9px] tracking-[0.6em]">Status</h5>
                <div className="flex flex-col gap-3">
                  <span className="flex items-center gap-2 text-green-500/50"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Operational</span>
-                 <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Education_Live</span>
-                 <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#00BFA6]" /> ICSE_Node</span>
+                 <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> IBA_Karachi</span>
+                 <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#00BFA6]" /> TEDx_Active</span>
                </div>
              </div>
           </div>
         </footer>
         
         <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-[1em] text-gray-800 pt-12 pb-6 border-t border-white/5 mt-32">
-          <span>© 2025 NABORAJ SARKAR</span>
-          <span className="hidden md:inline">FREE_EDUCATION_MISSION_INDIA</span>
-          <a href="https://github.com/naborajs" target="_blank" className="text-[#00BFA6]/40 hover:text-[#00BFA6] transition-colors">Architectural_Source</a>
+          <span>© 2026 SAADAN ASHRAF</span>
+          <span className="hidden md:inline">SYSTEMS_ARCHITECTURE_KARACHI</span>
+          <a href={CONFIG.socials[0].url} target="_blank" className="text-[#00BFA6]/40 hover:text-[#00BFA6] transition-colors">GitHub_Source</a>
         </div>
       </main>
     </div>
