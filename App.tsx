@@ -29,19 +29,20 @@ const CONFIG = {
 const CATEGORIES = ["All", "Cybersecurity", "Systems", "Full-Stack"];
 
 const PROTOCOL_REGISTRY = [
-  { id: "SEC-01", category: "Cybersecurity", title: "Meltdown POC", description: "Executed a proof-of-concept for the Meltdown CPU vulnerability. Developed comprehensive technical reports and visual simulation analysis.", icon: <ShieldCheck className="text-cyan-400" size={24} />, purpose: "Vulnerability Assessment", tags: ["C++", "Kernel", "Hardware"] },
-  { id: "SYS-02", category: "Systems", title: "MLFQ Scheduler", description: "Engineered a Multi-Level Feedback Queue scheduler directly within the xv6 operating system. Implemented dynamic promotion/demotion policies.", icon: <Cpu className="text-[#00BFA6]" size={24} />, purpose: "Low-level CPU Optimization", tags: ["C", "xv6", "OS Architecture"] },
-  { id: "SEC-03", category: "Cybersecurity", title: "Adversarial Phishing", description: "Developed an adversarial learning model to analyze and detect sophisticated phishing attempts across web environments.", icon: <Globe className="text-violet-500" size={24} />, purpose: "Threat Detection & Mitigation", tags: ["Python", "ML", "Security"] },
-  { id: "DEV-04", category: "Full-Stack", title: "Edu-Quiz Portal", description: "Architected a comprehensive full-stack quiz platform. Designed robust SQL database schemas and wrote comprehensive test cases to ensure accurate grading.", icon: <Layers className="text-amber-400" size={24} />, purpose: "Scalable Academic Tooling", tags: ["ReactJS", "Express", "SQL"] },
-  { id: "SEC-05", category: "Cybersecurity", title: "Network Defense", description: "Simulated advanced network layer attacks, including SYN Flood DoS utilizing Scapy within isolated Docker environments, alongside DNS spoofing mitigation.", icon: <Zap className="text-[#00BFA6]" size={24} />, purpose: "Network Infrastructure Hardening", tags: ["Scapy", "Docker", "DNS"] },
-  { id: "SYS-06", category: "Systems", title: "Cryptographic Vectors", description: "Engineered Python automation scripts focusing on byte-at-a-time ECB decryption attacks for advanced cryptanalysis and vulnerability demonstration.", icon: <Terminal className="text-pink-500" size={24} />, purpose: "Cryptographic Analysis", tags: ["Python", "Cryptography", "ECB"] }
+  { id: "SEC-01", category: "Cybersecurity", title: "Meltdown POC", description: "Executed a proof-of-concept for the Meltdown CPU vulnerability. Published comprehensive technical reports and visual simulation analysis as a Medium article in meetcyber.", icon: <ShieldCheck className="text-cyan-400" size={24} />, purpose: "Vulnerability Assessment", tags: ["C++", "Kernel", "Hardware"] },
+  { id: "SEC-02", category: "Cybersecurity", title: "Off-Path Sequence", description: "Performed advanced network security activity simulating the novel 2026 Off-Path Sequence vulnerability. Documented the exploitation vectors in a technical Medium article for meetcyber.", icon: <Globe className="text-red-400" size={24} />, purpose: "Network Threat Research", tags: ["Network Security", "TCP/IP", "Research"] },
+  { id: "SYS-03", category: "Systems", title: "MLFQ Scheduler", description: "Engineered a Multi-Level Feedback Queue scheduler directly within the xv6 operating system. Implemented dynamic promotion/demotion policies.", icon: <Cpu className="text-[#00BFA6]" size={24} />, purpose: "Low-level CPU Optimization", tags: ["C", "xv6", "OS Architecture"] },
+  { id: "SEC-04", category: "Cybersecurity", title: "Adversarial Phishing", description: "Developed an adversarial learning model to analyze and detect sophisticated phishing attempts across web environments.", icon: <Eye className="text-violet-500" size={24} />, purpose: "Threat Detection & Mitigation", tags: ["Python", "ML", "Security"] },
+  { id: "DEV-05", category: "Full-Stack", title: "Edu-Quiz Portal", description: "Architected a comprehensive full-stack quiz platform. Designed robust SQL database schemas and wrote comprehensive test cases to ensure accurate grading.", icon: <Layers className="text-amber-400" size={24} />, purpose: "Scalable Academic Tooling", tags: ["ReactJS", "Express", "SQL"] },
+  { id: "SEC-06", category: "Cybersecurity", title: "Network Defense", description: "Simulated advanced network layer attacks, including SYN Flood DoS utilizing Scapy within isolated Docker environments, alongside DNS spoofing mitigation.", icon: <Zap className="text-[#00BFA6]" size={24} />, purpose: "Network Infrastructure Hardening", tags: ["Scapy", "Docker", "DNS"] },
+  { id: "SYS-07", category: "Systems", title: "Cryptographic Vectors", description: "Engineered Python automation scripts focusing on byte-at-a-time ECB decryption attacks for advanced cryptanalysis and vulnerability demonstration.", icon: <Terminal className="text-pink-500" size={24} />, purpose: "Cryptographic Analysis", tags: ["Python", "Cryptography", "ECB"] }
 ];
 
 const TEMPORAL_LOGS = [
-  { year: "2021", title: "Foundations", text: "Began professional journey as a Teacher's Assistant at SWK Solutions, establishing strong fundamentals in technical instruction and communication.", icon: <Terminal /> },
+  { year: "2021", title: "Foundations", text: "Began professional journey as a Teacher's Assistant, establishing strong fundamentals in technical instruction and communication.", icon: <Terminal /> },
   { year: "2024", title: "Corporate & Leadership", text: "Operated as a Sales Representative at DESOL while successfully managing large-scale academic events on the Registrations Executive Council for TEDxIBA.", icon: <Activity /> },
   { year: "2025", title: "Strategic Vision", text: "Stepped up as Chief Advisor for TEDxIBA (2025-2026). Mentored the executive council in planning the annual event and driving cross-functional collaborations.", icon: <Command /> },
-  { year: "2026", title: "Systems & Security", text: "Currently serving as a TA for Computer Communications & Networks at IBA Karachi. Deep-diving into xv6 kernel modification and adversarial cybersecurity research.", icon: <ShieldCheck /> }
+  { year: "2026", title: "Systems & Security", text: "Serving as a TA for Computer Communications and Networking at IBA Karachi. Deep-diving into xv6 kernel modifications and researching the novel 2026 Off-Path Sequence network vulnerability.", icon: <ShieldCheck /> }
 ];
 
 const ProtocolCard = ({ item }: { item: typeof PROTOCOL_REGISTRY[0] }) => {
@@ -155,7 +156,7 @@ export default function App() {
         <section id="about" className="grid md:grid-cols-2 gap-24 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
             <span className="text-[#00BFA6] mono text-[10px] font-black tracking-[0.6em] uppercase">// The_Architecture</span>
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Who is<br/>Saadan Ashraf?</h2>
+            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Who am I?<br/></h2>
             <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed">
               <p>
                 As a Computer Science student at <span className="text-white font-bold">IBA Karachi</span>, my focus lies entirely at the intersection of low-level systems programming and high-level application architecture. I build platforms that scale and secure the networks they run on.
