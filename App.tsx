@@ -150,7 +150,7 @@ export default function App() {
               SAADAN<br/><span className="text-gradient">ASHRAF</span>
             </h1>
             <p className="text-2xl md:text-5xl text-gray-500 font-light max-w-5xl leading-tight">
-              A <span className="text-white font-medium italic underline underline-offset-8 decoration-[#00BFA6]">Systems Engineer</span> architecting full-stack solutions and modifying OS kernels.
+              A <span className="text-white font-medium italic underline underline-offset-8 decoration-[#00BFA6]">Security & QA Engineer</span> architecting resilient platforms, engineering adversarial AI models, and executing vulnerability assessments.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-6 pt-8">
               <a href="#registry" className="px-10 py-5 bg-white text-black rounded-full font-black uppercase text-xs tracking-[0.2em] hover:bg-[#00BFA6] hover:text-white transition-all text-center">View Operations</a>
@@ -163,6 +163,7 @@ export default function App() {
           </motion.div>
         </section>
 
+   
         {/* ABOUT / STORY */}
         <section id="about" className="grid md:grid-cols-2 gap-24 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
@@ -170,29 +171,29 @@ export default function App() {
             <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Who am I?<br/></h2>
             <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed">
               <p>
-                As a Computer Science student at <span className="text-white font-bold">IBA Karachi</span>, my focus lies entirely at the intersection of low-level systems programming and high-level application architecture. I build platforms that scale and secure the networks they run on.
+                As a Computer Science student at <span className="text-white font-bold">IBA Karachi</span>, my focus lies at the intersection of rigorous Quality Assurance, AI model engineering, and low-level systems architecture. I don't just build platforms; I break them, secure them, and make them autonomous.
               </p>
               <p>
-                My toolkit spans from developing responsive interfaces in <span className="text-white font-bold">ReactJS</span> and <span className="text-white font-bold">Express</span>, down to modifying the <span className="text-white font-bold italic">xv6 Operating System Kernel</span> using C++. I approach cybersecurity not just theoretically, but by engineering adversarial models and executing exploit proofs-of-concept.
+                My toolkit is deeply versatile. I architect scalable full-stack applications while enforcing strict <span className="text-white font-bold">QA protocols</span> to ensure platform stability and logical integrity. Simultaneously, I develop <span className="text-white font-bold italic">adversarial machine learning models</span> and modify the xv6 Operating System kernel to understand network security from the ground up.
               </p>
               <p>
-                Beyond the code, I actively foster cross-functional collaboration. Whether I am assisting instructors in <span className="text-[#00BFA6] font-bold">Computer Communications & Networks</span> or leading the executive council as the Chief Advisor for <span className="text-white font-bold">TEDxIBA</span>, my objective remains consistent: precision, leadership, and operational excellence.
+                Beyond the code, I actively foster cross-functional collaboration. Whether I am evaluating architectures as a TA for <span className="text-[#00BFA6] font-bold">Computer Communications & Networks</span> or mentoring the executive council as the Chief Advisor for <span className="text-white font-bold">TEDxIBA</span>, my objective remains consistent: precision, leadership, and operational excellence.
               </p>
             </div>
             <div className="flex flex-wrap gap-6 pt-6">
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">FULL-STACK</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">React_Node_SQL</span>
+                <span className="text-xs font-black text-[#00BFA6]">QA & WEB DEV</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">React_SQL_Testing</span>
               </div>
               <div className="w-[1px] h-10 bg-white/10 hidden sm:block" />
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">SYSTEMS</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">C++_Linux_xv6</span>
+                <span className="text-xs font-black text-[#00BFA6]">AI & ML</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">Python_CNN_Models</span>
               </div>
               <div className="w-[1px] h-10 bg-white/10 hidden sm:block" />
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">SECURITY</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">ISO27001_Kali</span>
+                <span className="text-xs font-black text-[#00BFA6]">SYSTEMS SEC</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">C++_xv6_Kali</span>
               </div>
             </div>
           </motion.div>
