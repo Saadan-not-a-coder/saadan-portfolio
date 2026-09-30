@@ -7,15 +7,15 @@ import {
 } from 'lucide-react';
 
 /**
- * SAADAN ASHRAF | SYSTEMS & SECURITY NODE v1.0
- * MISSION: SECURE ARCHITECTURE & KERNEL OPTIMIZATION
+ * SAADAN ASHRAF | SYSTEMS & SECURITY NODE v3.0
+ * MISSION: CYBERSECURITY RESEARCH, NETWORKS & GRC
  */
 const CONFIG = {
   identity: {
     name: "Saadan Ashraf",
-    tagline: "Systems Engineer & Cybersecurity Researcher",
+    tagline: "Cybersecurity & Networks Researcher",
     location: "Karachi, Pakistan",
-    logo: "/logo.png", // Keep your logo file in the public folder
+    logo: "/logo.png",
     repo: "https://github.com/saadan-ashraf",
     whatsapp: "https://wa.me/923316732222",
     email: "saadanashraf86@gmail.com"
@@ -26,34 +26,30 @@ const CONFIG = {
   ]
 };
 
-const CATEGORIES = ["All", "QA & Web Dev", "AI & ML", "Cybersecurity", "Systems"];
+const CATEGORIES = ["All", "Security & Research", "Systems & C++", "Web Development", "Operations"];
 const PROTOCOL_REGISTRY = [
-  // --- QA & WEB DEV (PRIORITY) ---
-  { id: "QA-01", category: "QA & Web Dev", title: "Enterprise Logic QA", description: "Conducted targeted Security QA testing on a live production system, successfully identifying a critical business logic flaw. Authored a formal vulnerability report detailing reproduction steps and communicated findings directly to the IT team.", icon: <Activity className="text-[#00BFA6]" size={24} />, purpose: "System Auditing & Bug Reporting", tags: ["Manual Testing", "Burp Suite", "Bug Reporting"] },
-  { id: "DEV-01", category: "QA & Web Dev", title: "Edu-Quiz Portal", description: "Architected a comprehensive full-stack quiz platform utilizing ReactJS and Express. Designed robust SQL schemas and authored comprehensive test cases to validate edge cases, ensuring platform stability and accurate real-time grading.", icon: <Layers className="text-amber-400" size={24} />, purpose: "Scalable Academic Tooling", tags: ["ReactJS", "Express", "QA Testing"] },
-  { id: "QA-02", category: "QA & Web Dev", title: "App Security Auditing", description: "Perform regular security QA in isolated environments. Craft custom SQLi and XSS payloads to test system input validation and sanitation controls. Conduct directory brute-forcing and credential testing using Gobuster and Hydra.", icon: <ShieldCheck className="text-blue-400" size={24} />, purpose: "Input Validation & Security QA", tags: ["SQLi/XSS", "Postman", "Gobuster"] },
+  // --- SECURITY & RESEARCH (EXPERIENCE) ---
+  { id: "SEC-01", category: "Security & Research", title: "PKCERT Vulnerability Research", description: "Conducted security audits and evaluations within the Vulnerability Assessment and Research Department. Focused on identifying system vulnerabilities, auditing complex networks, and ensuring compliance with secure architectural standards.", icon: <ShieldCheck className="text-cyan-400" size={24} />, purpose: "Vulnerability Assessment & GRC", tags: ["Research", "Security Audit", "GRC"] },
+  { id: "SEC-02", category: "Security & Research", title: "Architecture Evaluation", description: "Served as a Teaching Assistant for Computer Communications at IBA Karachi. Evaluated undergraduate code and practical assessments on complex architectures, data structures, and protocol analysis.", icon: <FileCode className="text-blue-400" size={24} />, purpose: "Academic Assessment", tags: ["Networks", "Protocols"] },
 
-  // --- AI & MACHINE LEARNING ---
-  { id: "AI-01", category: "AI & ML", title: "Adversarial Phishing", description: "Developed and trained an adversarial ML model designed to analyze and detect sophisticated phishing attempts. Designed test datasets and evaluated the model against adversarial inputs to validate detection accuracy and minimize false positives.", icon: <Eye className="text-violet-500" size={24} />, purpose: "Threat Detection & Mitigation", tags: ["Python", "ML", "Security"] },
-  { id: "AI-02", category: "AI & ML", title: "Market Predictor", description: "Architected a predictive model for stock market trends leveraging historical financial data, applying advanced regression techniques for time-series forecasting.", icon: <Activity className="text-green-400" size={24} />, purpose: "Financial Forecasting", tags: ["Python", "Pandas", "Scikit-Learn"] },
-  { id: "AI-03", category: "AI & ML", title: "Autonomous Racing", description: "Automated a racing simulation using real-time screen capturing. Implemented Convolutional Neural Networks (CNN) for visual feature extraction and Kalman filters for trajectory smoothing.", icon: <Rocket className="text-orange-400" size={24} />, purpose: "Computer Vision & Automation", tags: ["OpenCV", "CNN", "Kalman Filters"] },
-  { id: "AI-04", category: "AI & ML", title: "Regression Engine", description: "Built and trained a robust Linear Regression model from scratch. Focused on feature engineering and hyperparameter tuning to minimize mean squared error on large datasets.", icon: <Database className="text-indigo-400" size={24} />, purpose: "Statistical Modeling", tags: ["Python", "NumPy", "Statistics"] },
+  // --- SYSTEMS & C++ ---
+  { id: "SYS-01", category: "Systems & C++", title: "Parallel Inference Engine", description: "Developed high-performance software components in C and C++, utilizing OOP principles to optimize data processing pipelines. Implemented strict TDD methodologies with comprehensive testing suites and resilient job data structures.", icon: <Cpu className="text-[#00BFA6]" size={24} />, purpose: "High-Performance Computing", tags: ["C/C++", "OOP", "TDD"] },
+  { id: "SYS-02", category: "Systems & C++", title: "OS Kernel Architecture", description: "Wrote efficient C code to reengineer the xv6 kernel, replacing default policies with a complex MLFQ scheduling algorithm. Integrated low-level software components and custom system calls while documenting edge-case behaviors.", icon: <Terminal className="text-pink-500" size={24} />, purpose: "Low-level CPU Optimization", tags: ["C", "xv6", "Algorithms"] },
+  
+  // --- WEB DEVELOPMENT ---
+  { id: "DEV-01", category: "Web Development", title: "Enterprise Web Portal", description: "Designed and deployed a highly interactive full-stack web application, managing the release process from concept to production. Architected a robust relational database schema using SQL and engineered precise test datasets.", icon: <Layers className="text-amber-400" size={24} />, purpose: "Scalable SDLC Deployment", tags: ["React", "SQL", "Full-Stack"] },
 
-  // --- CYBERSECURITY ---
-  { id: "SEC-01", category: "Cybersecurity", title: "Meltdown POC", description: "Executed a proof-of-concept for the Meltdown CPU vulnerability. Published comprehensive technical reports and visual simulation analysis as a Medium article in meetcyber.", icon: <ShieldCheck className="text-cyan-400" size={24} />, purpose: "Vulnerability Assessment", tags: ["C++", "Kernel", "Hardware"] },
-  { id: "SEC-02", category: "Cybersecurity", title: "Off-Path Sequence", description: "Performed advanced network security activity simulating the novel 2026 Off-Path Sequence vulnerability. Documented the exploitation vectors in a technical Medium article for meetcyber.", icon: <Globe className="text-red-400" size={24} />, purpose: "Network Threat Research", tags: ["Network Security", "TCP/IP", "Research"] },
-  { id: "SEC-03", category: "Cybersecurity", title: "Network Defense", description: "Simulated advanced network layer attacks, including SYN Flood DoS utilizing Scapy within isolated Docker environments, alongside DNS spoofing mitigation.", icon: <Zap className="text-yellow-400" size={24} />, purpose: "Network Infrastructure Hardening", tags: ["Scapy", "Docker", "DNS"] },
-
-  // --- SYSTEMS ---
-  { id: "SYS-01", category: "Systems", title: "MLFQ Scheduler", description: "Engineered a Multi-Level Feedback Queue (MLFQ) scheduler directly within the xv6 operating system. Implemented complex queue structures and programmed dynamic policies to optimize CPU scheduling.", icon: <Cpu className="text-[#00BFA6]" size={24} />, purpose: "Low-level CPU Optimization", tags: ["C", "xv6", "OS Architecture"] },
-  { id: "SYS-02", category: "Systems", title: "Cryptographic Vectors", description: "Engineered Python automation scripts focusing on byte-at-a-time ECB decryption attacks for advanced cryptanalysis and vulnerability demonstration.", icon: <Terminal className="text-pink-500" size={24} />, purpose: "Cryptographic Analysis", tags: ["Python", "Cryptography", "ECB"] }
+  // --- OPERATIONS & LEADERSHIP ---
+  { id: "OP-01", category: "Operations", title: "Nestlé Data Analytics", description: "Analyzed commercial operations data and supply ledgers as a Corporate Intern. Produced detailed technical specifications to determine the operational feasibility of process improvements.", icon: <Activity className="text-green-400" size={24} />, purpose: "Commercial Feasibility", tags: ["Data Analysis", "Ledgers"] },
+  { id: "OP-02", category: "Operations", title: "Stakeholder Comms", description: "Operated as a Sales Lead at DESOL. Documented software functionality and maintained structured communication pipelines between external stakeholders and internal engineering teams.", icon: <Globe className="text-indigo-400" size={24} />, purpose: "Client-Engineering Sync", tags: ["Documentation", "Sales"] },
+  { id: "OP-03", category: "Operations", title: "Strategic Leadership", description: "Mentored teams in large-scale operations and ensured compliance with global standards as Chief Advisor for TEDxIBA. Concurrently coordinating entrepreneurial outreach as NIC Karachi Campus Ambassador.", icon: <Command className="text-orange-400" size={24} />, purpose: "Workflow & Outreach", tags: ["Leadership", "Operations"] }
 ];
 
 const TEMPORAL_LOGS = [
-  { year: "2021", title: "Foundations", text: "Began professional journey as a Teacher's Assistant, establishing strong fundamentals in technical instruction and communication.", icon: <Terminal /> },
-  { year: "2024", title: "Corporate & Leadership", text: "Operated as a Sales Representative at DESOL while successfully managing large-scale academic events on the Registrations Executive Council for TEDxIBA.", icon: <Activity /> },
-  { year: "2025", title: "Strategic Vision", text: "Stepped up as Chief Advisor for TEDxIBA (2025-2026). Mentored the executive council in planning the annual event and driving cross-functional collaborations.", icon: <Command /> },
-  { year: "2026", title: "Systems & Security", text: "Serving as a TA for Computer Communications and Networking at IBA Karachi. Deep-diving into xv6 kernel modifications and researching the novel 2026 Off-Path Sequence network vulnerability.", icon: <ShieldCheck /> }
+  { year: "2023", title: "Academic Foundations", text: "Commenced BS-Computer Science at IBA Karachi, establishing strong core competencies in Object-Oriented Programming, algorithms, and data structures.", icon: <GraduationCap /> },
+  { year: "2024", title: "Corporate Entry", text: "Acted as Sales Lead at DESOL, documenting software functionality. Began tenure as Chief Advisor for TEDxIBA, managing large-scale operational compliance.", icon: <Globe /> },
+  { year: "2026", title: "Systems Instruction", text: "Served as a Teaching Assistant for Computer Communications at IBA Karachi, evaluating complex architecture and protocol analysis code.", icon: <FileCode /> },
+  { year: "2026", title: "Security & Research", text: "Completed concurrent summer internships at Nestlé (Corporate Operations) and PKCERT's Vulnerability Assessment and Research Department.", icon: <ShieldCheck /> }
 ];
 
 const ProtocolCard = ({ item }: { item: typeof PROTOCOL_REGISTRY[0] }) => {
@@ -144,13 +140,13 @@ export default function App() {
           <motion.div style={{ opacity, scale }} className="space-y-12">
             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full glass border-[#00BFA6]/30 mx-auto md:mx-0">
               <ShieldCheck size={14} className="text-[#00BFA6]" />
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase mono text-[#00BFA6]">SAADAN_ASHRAF_SYS_AUTH</span>
+              <span className="text-[10px] font-black tracking-[0.3em] uppercase mono text-[#00BFA6]">SAADAN_ASHRAF_RESEARCH_NODE</span>
             </div>
             <h1 className="text-7xl md:text-[13rem] font-black tracking-tighter leading-[0.75]">
               SAADAN<br/><span className="text-gradient">ASHRAF</span>
             </h1>
             <p className="text-2xl md:text-5xl text-gray-500 font-light max-w-5xl leading-tight">
-              A <span className="text-white font-medium italic underline underline-offset-8 decoration-[#00BFA6]">Security & QA Engineer</span> architecting resilient platforms, engineering adversarial AI models, and executing vulnerability assessments.
+              A <span className="text-white font-medium italic underline underline-offset-8 decoration-[#00BFA6]">Cybersecurity Researcher</span> specializing in vulnerability assessment, networks, and Governance, Risk, and Compliance (GRC).
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-6 pt-8">
               <a href="#registry" className="px-10 py-5 bg-white text-black rounded-full font-black uppercase text-xs tracking-[0.2em] hover:bg-[#00BFA6] hover:text-white transition-all text-center">View Operations</a>
@@ -163,7 +159,6 @@ export default function App() {
           </motion.div>
         </section>
 
-   
         {/* ABOUT / STORY */}
         <section id="about" className="grid md:grid-cols-2 gap-24 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
@@ -171,29 +166,29 @@ export default function App() {
             <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Who am I?<br/></h2>
             <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed">
               <p>
-                As a Computer Science student at <span className="text-white font-bold">IBA Karachi</span>, my focus lies at the intersection of rigorous Quality Assurance, AI model engineering, and low-level systems architecture. I don't just build platforms; I break them, secure them, and make them autonomous.
+                I am a final-year Computer Science student at <span className="text-white font-bold">IBA Karachi</span> with a strong foundation in systems architecture and protocol analysis. I am currently seeking to leverage my technical foundation toward rigorous research in <span className="text-white font-bold">cybersecurity, network defense, and GRC</span>.
               </p>
               <p>
-                My toolkit is deeply versatile. I architect scalable full-stack applications while enforcing strict <span className="text-white font-bold">QA protocols</span> to ensure platform stability and logical integrity. Simultaneously, I develop <span className="text-white font-bold italic">adversarial machine learning models</span> and modify the xv6 Operating System kernel to understand network security from the ground up.
+                Experienced in full-lifecycle development and low-level optimization, I utilize <span className="text-white font-bold italic">C, C++, SQL, and modern web frameworks</span> to understand how systems are built—so I can better secure them. My expertise spans integrating complex software components, replacing default kernel policies, and documenting edge-case behaviors.
               </p>
               <p>
-                Beyond the code, I actively foster cross-functional collaboration. Whether I am evaluating architectures as a TA for <span className="text-[#00BFA6] font-bold">Computer Communications & Networks</span> or mentoring the executive council as the Chief Advisor for <span className="text-white font-bold">TEDxIBA</span>, my objective remains consistent: precision, leadership, and operational excellence.
+                Beyond core engineering, I bring operational and analytical insight from roles at <span className="text-[#00BFA6] font-bold">Nestlé</span> and the <span className="text-[#00BFA6] font-bold">Vulnerability Assessment and Research Department at PKCERT</span>, alongside leadership experience managing large-scale compliance for TEDxIBA. My objective is consistent: identify vulnerabilities, optimize data structures, and architect resilient, compliant networks.
               </p>
             </div>
             <div className="flex flex-wrap gap-6 pt-6">
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">QA & WEB DEV</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">React_SQL_Testing</span>
+                <span className="text-xs font-black text-[#00BFA6]">CYBERSECURITY</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">Research_Audit_GRC</span>
               </div>
               <div className="w-[1px] h-10 bg-white/10 hidden sm:block" />
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">AI & ML</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">Python_CNN_Models</span>
+                <span className="text-xs font-black text-[#00BFA6]">NETWORKS</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">Protocols_Architecture</span>
               </div>
               <div className="w-[1px] h-10 bg-white/10 hidden sm:block" />
               <div className="flex flex-col">
-                <span className="text-xs font-black text-[#00BFA6]">SYSTEMS SEC</span>
-                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">C++_xv6_Kali</span>
+                <span className="text-xs font-black text-[#00BFA6]">SYSTEMS</span>
+                <span className="text-[10px] text-gray-600 tracking-widest uppercase font-bold">C/C++_xv6_Linux</span>
               </div>
             </div>
           </motion.div>
@@ -279,7 +274,7 @@ export default function App() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#00BFA6]/5 via-transparent to-[#7C3AED]/5 pointer-events-none" />
             <div className="space-y-6">
               <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter">Direct<br/><span className="text-[#00BFA6]">Inquiry</span></h2>
-              <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">Available for security assessments, full-stack architecture roles, and technical collaborations.</p>
+              <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">Available for research positions in cybersecurity, networks, and GRC.</p>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center gap-6 pt-8">
               <a href={`mailto:${CONFIG.identity.email}`} className="flex items-center gap-3 px-12 py-6 bg-white text-black rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#00BFA6] hover:text-white transition-all w-full md:w-auto text-center justify-center">
@@ -296,16 +291,17 @@ export default function App() {
         </section>
 
         {/* FOOTER */}
-          <footer className="pt-32 pb-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-start gap-16 text-[10px] font-black uppercase tracking-[0.4em] text-gray-700 mono">          <div className="space-y-8 max-w-xs">
+          <footer className="pt-32 pb-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-start gap-16 text-[10px] font-black uppercase tracking-[0.4em] text-gray-700 mono">
+          <div className="space-y-8 max-w-xs">
             <div className="flex items-center gap-6">
               <img src={CONFIG.identity.logo} className="w-12 h-12 object-contain grayscale opacity-30 hover:opacity-100 transition-opacity" alt="Logo" />
               <div>
                 <p className="text-white text-xs tracking-widest">SAADAN ASHRAF</p>
-                <p className="text-[#00BFA6]/40 mt-1">Systems Node v1.0</p>
+                <p className="text-[#00BFA6]/40 mt-1">Security Research Node v3.0</p>
               </div>
             </div>
             <p className="normal-case tracking-normal text-xs text-gray-500 font-light leading-relaxed">
-              Computer Science student at IBA. Specialized in full-stack engineering, kernel modification, and vulnerability assessment. 
+              Final-year Computer Science student at IBA Karachi. Specialized in Cybersecurity Research, Networks, and GRC.
             </p>
             <div className="flex items-center gap-3 text-gray-800">
               <MapPin size={12} className="text-[#00BFA6]" />
@@ -336,7 +332,7 @@ export default function App() {
                <div className="flex flex-col gap-3">
                  <span className="flex items-center gap-2 text-green-500/50"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Operational</span>
                  <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> IBA_Karachi</span>
-                 <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#00BFA6]" /> TEDx_Active</span>
+                 <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#00BFA6]" /> Research_Active</span>
                </div>
              </div>
           </div>
@@ -344,7 +340,7 @@ export default function App() {
         
         <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-[1em] text-gray-800 pt-12 pb-6 border-t border-white/5 mt-32">
           <span>© 2026 SAADAN ASHRAF</span>
-          <span className="hidden md:inline">SYSTEMS_ARCHITECTURE_KARACHI</span>
+          <span className="hidden md:inline">SECURITY_RESEARCH_KARACHI</span>
           <a href={CONFIG.socials[0].url} target="_blank" className="text-[#00BFA6]/40 hover:text-[#00BFA6] transition-colors">GitHub_Source</a>
         </div>
       </main>
